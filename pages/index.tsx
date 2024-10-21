@@ -1,3 +1,4 @@
+import React from 'react';
 import Image from "next/image";
 import localFont from "next/font/local";
 import WalletConnectButton from '../components/WalletConnectButton';
