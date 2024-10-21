@@ -3,7 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "concurrently \"npm run dev:next\" \"npm run dev:server\"",
+    "dev:next": "next dev",
+    "dev:server": "nodemon --exec ts-node --files server.ts",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
@@ -14,18 +16,19 @@
     "@emotion/styled": "^11.13.0",
     "@hookform/resolvers": "^3.9.0",
     "@project-serum/anchor": "^0.26.0",
-    "@react-three/drei": "^9.114.6",
-    "@react-three/fiber": "^8.17.10",
     "@solana/wallet-adapter-base": "^0.9.23",
     "@solana/wallet-adapter-react": "^0.15.35",
     "@solana/wallet-adapter-react-ui": "^0.9.35",
     "@solana/wallet-adapter-wallets": "^0.19.32",
     "@solana/web3.js": "^1.95.4",
     "axios": "^1.7.7",
+    "concurrently": "^9.0.1",
     "date-fns": "^4.1.0",
+    "dotenv": "^16.4.5",
+    "express": "^4.21.1",
     "framer-motion": "^11.11.9",
     "i18next": "^23.16.1",
-    "lucide-react": "^0.453.0",
+    "mongoose": "^8.7.2",
     "next": "^14.2.15",
     "next-i18next": "^15.3.1",
     "react": "^18.3.1",
@@ -39,6 +42,7 @@
   "devDependencies": {
     "@testing-library/jest-dom": "^6.6.2",
     "@testing-library/react": "^16.0.1",
+    "@types/express": "^5.0.0",
     "@types/node": "^20.16.13",
     "@types/react": "^18.3.11",
     "@types/react-dom": "^18",
@@ -48,3 +52,4 @@
     "typescript": "^5.6.3"
   }
 }
+
