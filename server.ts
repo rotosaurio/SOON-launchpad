@@ -2,6 +2,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const dotenv = require('dotenv');
 const presaleRoutes = require('./server/routes/presales');
+const cors = require('cors');
 
 dotenv.config();
 
@@ -9,6 +10,7 @@ const app = express();
 const PORT = process.env.PORT || 5000;
 
 app.use(express.json());
+app.use(cors());
 
 // Conectar a MongoDB
 mongoose.connect(process.env.MONGODB_URI as string, {
